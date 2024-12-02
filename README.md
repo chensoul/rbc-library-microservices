@@ -18,7 +18,8 @@ This project consists of several microservices and a front ui app.
 ## Features
 
 - Hexagonal Architecture
-- Spring Cloud Gateway
+- Spring Boot 2.7.18 
+- Spring Cloud 2021.0.9
 - Spring OAuth2 client with Google
 - Elasticsearch
 - MongoDB
