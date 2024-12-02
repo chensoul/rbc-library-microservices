@@ -17,11 +17,13 @@ This project consists of several microservices and a front ui app.
 
 ## Features
 
+- Hexagonal Architecture
 - Spring Cloud Gateway
 - Spring OAuth2 client with Google
 - Elasticsearch
 - MongoDB
 - Kafka
+- Unit Test with Junit 5、Testcontainers、Awaitility、Jacoco plugin
 
 ## Prerequisites
 
