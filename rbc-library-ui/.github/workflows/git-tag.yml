@@ -27,7 +27,7 @@ jobs:
           echo "::set-output name=bump_type::${BUMP_TYPE}"
       - name: Name new version and push new git tag
         id: tag_version
-        uses: mathieudutour/github-tag-action@v6.0
+        uses: mathieudutour/github-tag-action@v6.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           default_bump: ${{ steps.get_bump_type.outputs.bump_type }}
