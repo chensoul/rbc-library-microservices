@@ -1,4 +1,4 @@
-# rbc-library
+# rbc-library-microservices
 
 This project which was forked from https://github.com/ProductDock demonstrates how to implement OAuth2 authentication in
 a Spring Cloud MicroService Project using OAuth2
