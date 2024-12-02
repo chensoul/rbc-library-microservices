@@ -1,16 +1,14 @@
 package com.productdock.library.rental.adapter.out.kafka.publisher;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.google.gson.Gson;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import static com.productdock.library.rental.data.provider.out.kafka.RentalRecordsMessageMother.defaultRentalRecordsMessageBuilder;
+import java.util.Collections;
+import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.Collections;
-
-import static com.productdock.library.rental.data.provider.out.kafka.RentalRecordsMessageMother.defaultRentalRecordsMessageBuilder;
-import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
 class KafkaMessageProducerShould {
@@ -26,9 +24,9 @@ class KafkaMessageProducerShould {
 
         var producerRecord = kafkaMessageProducer.createKafkaRecord(BOOK_STATUS_TOPIC, rentalRecordsMessage);
 
-        Gson gson = new Gson();
+        ObjectMapper objectMapper = new ObjectMapper();
         String desiredValue = "{\"bookId\":\"" + rentalRecordsMessage.getBookId() +
-                "\",\"rentalRecords\":" + gson.toJson(rentalRecordsMessage.getRentalRecords()) + "}";
+                "\",\"rentalRecords\":" + objectMapper.writeValueAsString(rentalRecordsMessage.getRentalRecords()) + "}";
 
         assertThat(producerRecord.value()).isEqualTo(desiredValue);
     }

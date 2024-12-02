@@ -23,7 +23,8 @@ This project consists of several microservices and a front ui app.
 - Elasticsearch
 - MongoDB
 - Kafka
-- Unit Test with Junit 5、Testcontainers、Awaitility、Jacoco plugin
+- Unit Test with Junit 5、Testcontainers、Awaitility、mockwebserver、Jacoco plugin
+- Mapstruct
 
 ## Prerequisites
 
