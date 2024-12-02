@@ -1,0 +1,19 @@
+SEARCH_SERVICE_URL: http://localhost:8081
+CATALOG_SERVICE_URL: http://localhost:8082
+RENTAL_SERVICE_URL: http://localhost:8083
+INVENTORY_SERVICE_URL: http://localhost:8084
+USER_PROFILES_SERVICE_URL: http://localhost:8085
+FRONTEND_URL: http://localhost:3000
+
+MONGO_SERVER_URL: localhost
+MONGO_SERVER_PORT: 28017
+MONGO_USERNAME: root
+MONGO_PASSWORD: root1
+
+GOOGLE_CLIENT_ID: 385465491380-8q1fk7r47tqu6mcc9klob2c1a9sl4jmd.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET: 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
+
+logging:
+  level:
+    org.springframework.security: trace
+

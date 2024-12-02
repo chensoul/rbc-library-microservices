@@ -1,0 +1,57 @@
+
+spring:
+  cloud:
+    gcp:
+      sql:
+        database-name: catalog
+        instance-connection-name: ${GCP_SQL_INSTANCE_CONNECTION_NAME}
+  flyway:
+    user: ${MYSQL_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    schemas: catalog
+    url: jdbc:mysql://google/catalog?cloudSqlInstance=${GCP_SQL_INSTANCE_CONNECTION_NAME}&socketFactory=com.google.cloud.sql.mysql.SocketFactory
+    locations: classpath:db/migration
+    baselineOnMigrate: true
+  kafka:
+    enabled: true
+    bootstrap-servers: ${KAFKA_SERVER_URL}
+    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    producer:
+      client-id: kafka-message-producer
+      acks: all
+    topic:
+      book-rating: book-rating
+      insert-book: insert-book
+      delete-book: delete-book
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+server:
+  error:
+    include-message: always
+  port: 8082
+
+logging:
+  level:
+    com.productdock: INFO
+
+file-logging-enabled: ${LOG_TO_FILE}
+
+jwt:
+  public.key: classpath:${USER_PROFILES_JWT_PUBLIC_KEY}
+
+rental:
+  service:
+    url: ${RENTAL_SERVICE_URL}
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'

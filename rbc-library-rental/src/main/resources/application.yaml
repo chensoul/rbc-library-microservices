@@ -1,0 +1,65 @@
+server.port: 8083
+
+spring:
+  kafka:
+    enabled: true
+    bootstrap-servers: ${KAFKA_SERVER_URL}
+    producer:
+      client-id: kafka-message-producer
+      acks: all
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      enable-auto-commit: true
+      auto-offset-reset: latest
+      group-id: rental-group
+    topic:
+      book-status: book-status
+
+  data:
+    mongodb:
+      authentication-database: admin
+      host: ${MONGO_SERVER_URL}
+      port: ${MONGO_SERVER_PORT}
+      username: ${MONGO_USERNAME}
+      password: ${MONGO_PASSWORD}
+      database: rental
+
+server:
+  error:
+    include-message: always
+
+mongock:
+  change-logs-scan-package: com.productdock.library.rental.config.dbmigrations
+
+logging:
+  level:
+    com.productdock.library.rental: INFO
+
+file-logging-enabled: ${LOG_TO_FILE}
+
+reservations:
+  auto-canceling:
+    scheduled: '0 0 8 * * *'
+    reservation-expiration-policy:
+      limit:
+        unit: DAYS
+        value: 4
+      week-policy: WORKDAYS
+
+jwt:
+  public.key: classpath:${USER_PROFILES_JWT_PUBLIC_KEY}
+
+user:
+  profiles:
+    service:
+      url: ${USER_PROFILES_SERVICE_URL}
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'

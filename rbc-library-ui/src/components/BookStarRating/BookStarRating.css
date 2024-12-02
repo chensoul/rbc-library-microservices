@@ -1,0 +1,31 @@
+.star-rating {
+  height: 24px;
+  max-width: 130px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.ratings-count.MuiTypography-root {
+  margin-left: 4px;
+  color: darkslategray;
+}
+
+.max-rating {
+  color: darkslategray;
+}
+
+.star-rating .yellow-icon.MuiSvgIcon-root {
+  width: 1em;
+  float: right;
+  color: #f3e110;
+  margin-right: 10px;
+}
+
+.star-rating .outlined-icon.MuiSvgIcon-root {
+  width: 1em;
+  color: #979797;
+}
+
+.star-rating .MuiTypography-root {
+  float: right;
+}

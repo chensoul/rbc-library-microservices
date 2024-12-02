@@ -1,0 +1,76 @@
+.review-card-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 12px 12px 26px 12px;
+  border-radius: 8px;
+}
+
+.your-review-card-div {
+  background-color: #eeeeee;
+}
+
+.review-card-avatar {
+  width: 13%;
+  margin-right: 20px;
+}
+
+.review-card-avatar img {
+  width: 3em;
+}
+
+.review-card-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.review-card-info-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.review-card-user-name .MuiTypography-root {
+  width: 15em;
+  font-size: 12px;
+}
+
+.review-card-comment {
+  width: 14em;
+  margin: 4px 0;
+}
+
+.review-card-recommended {
+  width: 14em;
+}
+
+.review-action-container {
+  display: flex;
+  width: 100%;
+  padding: 0.8em 0 0 4em;
+}
+
+.review-action-container div {
+  width: auto;
+  margin: 0;
+}
+
+.review-action-container-edit {
+  border-right: 1px solid #cccccc;
+}
+
+.review-action-container a {
+  margin: 0 1em;
+}
+
+.review-action-container .edit-a-review-button {
+  cursor: pointer;
+}
+
+.review-action-container .delete-a-review-button {
+  cursor: pointer;
+}
+
+.review-action-container .edit-a-review-button-icon {
+  height: 1em;
+}

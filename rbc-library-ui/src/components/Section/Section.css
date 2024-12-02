@@ -1,0 +1,10 @@
+.separator-line {
+  position: relative;
+  width: 100%;
+  bottom: 0%;
+  height: 1px;
+  border: 0;
+  margin-top: 6px;
+  background: #cccccc;
+  margin-bottom: 1.5em;
+}

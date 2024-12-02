@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/rbc-library-catalog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rbc-library-gateway" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rbc-library-inventory" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rbc-library-notification" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rbc-library-rental" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rbc-library-search" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rbc-library-ui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/rbc-library-user-profiles" vcs="Git" />
+  </component>
+</project>

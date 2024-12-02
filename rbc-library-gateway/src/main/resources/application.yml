@@ -1,0 +1,90 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            scope: openid, email, profile
+    basic.enabled: false
+
+  cloud:
+    gateway:
+      default-filters:
+        #        - SaveSession
+        - RemoveRequestHeader=Cookie
+        - Jwt
+        - name: Retry
+          args:
+            retries: 3
+            series: SERVER_ERROR
+            methods: GET
+            backoff:
+              firstBackoff: 50ms
+              maxBackoff: 500ms
+              factor: 2
+              basedOnPreviousValue: false
+      routes:
+        - id: catalog-route
+          uri: ${CATALOG_SERVICE_URL}
+          predicates:
+            - Path=/api/catalog/**
+        - id: search-route
+          uri: ${SEARCH_SERVICE_URL}
+          predicates:
+            - Path=/api/search/**
+        - id: rental-route
+          uri: ${RENTAL_SERVICE_URL}
+          predicates:
+            - Path=/api/rental/**
+        - id: user-profiles-route
+          uri: ${USER_PROFILES_SERVICE_URL}
+          predicates:
+            - Path=/api/user-profiles/**
+        - id: inventory-route
+          uri: ${INVENTORY_SERVICE_URL}
+          predicates:
+            - Path=/api/inventory/**
+
+  data:
+    mongodb:
+      authentication-database: admin
+      host: ${MONGO_SERVER_URL}
+      port: ${MONGO_SERVER_PORT}
+      username: ${MONGO_USERNAME}
+      password: ${MONGO_PASSWORD}
+      database: sessions
+#  session:
+#    store-type: mongodb
+#    timeout: 10m
+
+catalog:
+  service:
+    url: ${CATALOG_SERVICE_URL}
+rental:
+  service:
+    url: ${RENTAL_SERVICE_URL}
+inventory:
+  service:
+    url: ${INVENTORY_SERVICE_URL}
+user-profiles:
+  service:
+    url: ${USER_PROFILES_SERVICE_URL}
+
+cors:
+  allowed:
+    origins: ${FRONTEND_URL}
+
+security:
+  front-to-gateway:
+    redirect-uri: ${FRONTEND_URL}
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'

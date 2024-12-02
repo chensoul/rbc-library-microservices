@@ -1,0 +1,106 @@
+.carousel-padding .react-multiple-carousel__arrow--left {
+  left: calc(4% + 30px);
+}
+
+.carousel-padding .react-multiple-carousel__arrow {
+  border: 1.5px solid black;
+  background: transparent;
+}
+
+.carousel-padding .react-multiple-carousel__arrow:hover {
+  background: black;
+}
+
+.carousel-padding .react-multiple-carousel__arrow::before {
+  color: black;
+}
+
+.carousel-padding .react-multiple-carousel__arrow:disabled {
+  border: 1.5px solid #cccccc;
+  background: transparent;
+}
+
+.carousel-padding .react-multiple-carousel__arrow:disabled::before {
+  color: #cccccc;
+}
+.carousel-padding .react-multiple-carousel__arrow:disabled:hover:before {
+  color: #cccccc;
+}
+
+.carousel-padding .react-multiple-carousel__arrow:hover::before {
+  color: white;
+}
+
+.carousel-padding .react-multiple-carousel__arrow--right {
+  right: calc(4% + 30px);
+}
+
+.carousel-padding {
+  padding: 0 200px 0 210px;
+}
+
+.carousel-container.react-multi-carousel-list {
+  position: static;
+}
+
+.carousel-container .react-multi-carousel-track {
+  padding-left: 0.75vw;
+}
+
+@media only screen and (max-width: 800px) {
+  .carousel-padding {
+    padding: 0;
+  }
+
+  .carousel-container .react-multi-carousel-track {
+    padding-left: 0;
+  }
+
+  .carousel-padding .book-box {
+    width: 380px;
+    height: 230px;
+  }
+
+  .carousel-padding .image-box-clickable {
+    position: absolute;
+    margin: 0;
+    transform: scale(0.7);
+    transform-origin: top left;
+  }
+
+  .carousel-padding .text-box {
+    display: block;
+  }
+
+  .carousel-padding .book-status-homepage {
+    margin-top: 210px;
+    transform: scale(0.9);
+  }
+
+  .carousel-padding .star-rating {
+    margin-top: 180px;
+    transform: scale(0.9);
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 900px) {
+  .carousel-padding {
+    padding: 0 260px;
+  }
+
+  .carousel-container .react-multi-carousel-track {
+    padding-left: 60px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+  .carousel-padding {
+    padding: 0 120px;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .carousel-padding {
+    padding: 0 210px 0 230px;
+  }
+}

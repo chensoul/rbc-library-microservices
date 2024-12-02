@@ -1,0 +1,70 @@
+.review-section .title .MuiTypography-root {
+  font-weight: 300px;
+}
+
+.review-section > div > .separator-line {
+  margin: 1.1em 0;
+}
+
+.review-section-message.MuiTypography-root {
+  margin-top: 1em;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.book-review-form-wrapper {
+  background-color: #000000;
+  position: fixed;
+  z-index: 1300;
+  opacity: 0.1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.book-review-form-container {
+  background-color: #f7f7f9;
+  position: fixed;
+  z-index: 1301;
+  top: 0;
+  height: 100vh;
+  right: 0;
+  min-width: 25vw;
+  padding: 1.5em 1.5em 1.5em 1.5em;
+}
+
+.review-section .side-text {
+  font-size: 14px;
+}
+
+.review-section .write-a-review-button {
+  font-weight: 400;
+  color: #00609a;
+  margin-left: 1vw;
+  cursor: pointer;
+}
+
+.review-section .write-a-review-button-icon {
+  vertical-align: middle;
+  margin-left: 0.5em;
+}
+
+@media only screen and (max-width: 800px) {
+  .review-section .write-a-review-button-icon {
+    display: none;
+  }
+
+  .book-review-form-container {
+    position: relative;
+    background-color: #f7f7f9;
+    z-index: 1298;
+    height: auto;
+    padding-bottom: 8em;
+    bottom: 0;
+  }
+
+  .book-review-form-wrapper {
+    display: none;
+  }
+}

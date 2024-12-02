@@ -1,0 +1,85 @@
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+div.container {
+  padding: 20px;
+}
+
+.navbar {
+  height: 64px;
+}
+
+.MuiPaper-root.MuiAppBar-root {
+  position: sticky;
+  background-color: white;
+}
+
+.navbar-div {
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px 5.56%;
+}
+
+.navbar-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  height: 32px;
+  margin: 16px 32px 16px 0;
+}
+
+.navbar-text {
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000000;
+}
+
+.navbar-company {
+  font-family: "Neue Haas Unica W1G";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.navbar-title {
+  font-family: "Neue Haas Unica W1G Light";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+}
+
+.main-div {
+  padding-top: 0;
+  background-color: #f7f7f9;
+  min-height: 100%;
+  position: relative;
+}
+
+.account-avatar {
+  align-self: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .main-div {
+    min-height: calc(100vh - 64px);
+  }
+}
