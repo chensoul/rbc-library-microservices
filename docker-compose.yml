@@ -30,7 +30,7 @@ services:
       retries: 10
 
   kafka:
-    image: confluentinc/cp-kafka:7.9.3
+    image: confluentinc/cp-kafka:8.0.1
     container_name: kafka
     ports:
       - "9092:9092"
